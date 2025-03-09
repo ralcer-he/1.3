@@ -1,5 +1,4 @@
 // public/scripts/modules/health.js
-
 import { fetchLocalData, showLoading, createElement } from '../utils.js';
 
 class HealthModule {
@@ -292,8 +291,7 @@ class HealthModule {
     showLoading('resultSection');
     
     try {
-      this.planData = await fetchLocalData('/1.3/data/daily-plans.json');
-      
+      const planData = await fetchLocalData('/1.3/data/daily-plans.json');
       
       // 兼容中英文键名
       const rawPlans = planData.日常计划 || planData.dailyPlans;
@@ -342,7 +340,7 @@ class HealthModule {
 
       // 应急回退
       this.healthPlan = {
-        dailyTasks: [{
+        dailyTasks: [ {
           id: 'emergency_task',
           name: '⚠️ 数据加载失败，请稍后重试',
           type: '系统',
