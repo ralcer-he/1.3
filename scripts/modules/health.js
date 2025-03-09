@@ -1,4 +1,5 @@
 // public/scripts/modules/health.js
+
 import { fetchLocalData, showLoading, createElement } from '../utils.js';
 
 class HealthModule {
@@ -291,7 +292,8 @@ class HealthModule {
     showLoading('resultSection');
     
     try {
-      const planData = await fetchLocalData('/1.3/data/daily-plans.json');
+      this.planData = await fetchLocalData('/1.3/data/daily-plans.json');
+      
       
       // 兼容中英文键名
       const rawPlans = planData.日常计划 || planData.dailyPlans;
