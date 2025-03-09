@@ -28,7 +28,7 @@ class HealthModule {
 
   async init() {
     try {
-      this.config = await fetchLocalData('../../data/health-config.json');
+      this.config = await fetchLocalData('/1.3/data/health-config.json');
       this.renderForm();
       this.loadSavedData();
       this.bindEvents();

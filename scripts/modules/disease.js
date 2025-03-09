@@ -13,7 +13,7 @@ class DiseaseModule {
 
   async init() {
     try {
-      this.diseaseData = await fetchLocalData('../../data/diseases.json');
+      this.diseaseData = await fetchLocalData('/1.3/data/diseases.json');
       this.renderDiagnosisInterface();
       this.bindEvents();
     } catch (error) {
