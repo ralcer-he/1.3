@@ -4,9 +4,9 @@ import { showLoading, createElement } from './utils.js';
 let currentModule = null;
 
 const moduleMap = {
-  recipe: './modules/recipe.js',
-  health: './modules/health.js',
-  disease: './modules/disease.js'
+  recipe: '/scripts/modules/recipe.js',
+  health: '/scripts/modules/health.js',
+  disease: '/scripts/modules/disease.js'
 };
 
 async function loadModule(moduleName) {
