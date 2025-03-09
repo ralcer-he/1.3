@@ -1,5 +1,5 @@
 // public/scripts/modules/health.js
-import { fetchLocalData, createElement, showLoading } from '../utils.js';
+import { fetchLocalData, showLoading, createElement } from '../utils.js';
 
 class HealthModule {
   constructor() {
@@ -291,7 +291,7 @@ class HealthModule {
     showLoading('resultSection');
     
     try {
-      const planData = await fetchLocalData('../../data/daily-plans.json');
+      const planData = await fetchLocalData('/1.3/data/daily-plans.json');
       
       // 兼容中英文键名
       const rawPlans = planData.日常计划 || planData.dailyPlans;
@@ -353,7 +353,7 @@ class HealthModule {
 
   async checkDataStatus() {
     try {
-      const res = await fetch('../../data/daily-plans.json');
+      const res = await fetch('/1.3/data/daily-plans.json');
       return {
         status: res.status,
         ok: res.ok,
