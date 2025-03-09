@@ -4,9 +4,9 @@ import { showLoading, createElement } from './utils.js';
 let currentModule = null;
 
 const moduleMap = {
-  recipe: '/scripts/modules/recipe.js',
-  health: '/scripts/modules/health.js',
-  disease: '/scripts/modules/disease.js'
+  recipe: './scripts/modules/recipe.js',
+  health: './scripts/modules/health.js',
+  disease: './scripts/modules/disease.js'
 };
 
 async function loadModule(moduleName) {
@@ -99,3 +99,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // 加载默认模块
   loadModule('health');
 });
+// 在 app.js 的 loadModule 函数中添加调试信息
+async function loadModule(moduleName) {
+  try {
+    console.log('正在加载模块:', moduleMap[moduleName]);  // 添加路径验证
+    
+    // 验证模块是否存在
+    const testReq = await fetch(moduleMap[moduleName]);
+    if (!testReq.ok) {
+      throw new Error(`模块文件不存在 (${testReq.status})`);
+    }
+
+    // 原有加载逻辑...
+  } catch (error) {
+    console.error(`[${new Date().toISOString()}] 模块加载失败:`, error);
+    showModuleError(moduleName, error);
+  }
+}
