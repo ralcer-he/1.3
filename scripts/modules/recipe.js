@@ -1,5 +1,5 @@
 // public/scripts/modules/recipe.js
-import { fetchLocalData, createElement } from '../utils.js';
+import { fetchLocalData, createElement } from '../../utils.js';
 
 const PAGE_SIZE = 6;
 
@@ -12,7 +12,7 @@ export default {
   async init() {
     try {
       this.renderLoading();
-      this.data = await fetchLocalData('../data/recipes.json');
+      this.data = await fetchLocalData('./data/recipes.json');
       this.renderScenarioSelection();
       this.bindGlobalEvents();
     } catch (error) {

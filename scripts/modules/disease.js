@@ -1,5 +1,5 @@
 // public/scripts/modules/disease.js
-import { fetchLocalData, showLoading, createElement } from '../utils.js';
+import { fetchLocalData, showLoading, createElement } from '../../utils.js';
 
 class DiseaseModule {
   constructor() {
@@ -13,7 +13,7 @@ class DiseaseModule {
 
   async init() {
     try {
-      this.diseaseData = await fetchLocalData('../../data/diseases.json');
+      this.diseaseData = await fetchLocalData('./data/diseases.json');
       this.renderDiagnosisInterface();
       this.bindEvents();
     } catch (error) {

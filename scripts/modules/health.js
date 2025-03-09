@@ -1,5 +1,5 @@
 // public/scripts/modules/health.js
-import { fetchLocalData, createElement, showLoading } from '../utils.js';
+import { fetchLocalData, createElement, showLoading } from '../../utils.js';
 
 class HealthModule {
   constructor() {
@@ -28,7 +28,7 @@ class HealthModule {
 
   async init() {
     try {
-      this.config = await fetchLocalData('../../data/health-config.json');
+      this.config = await fetchLocalData('./data/health-config.json');
       this.renderForm();
       this.loadSavedData();
       this.bindEvents();
