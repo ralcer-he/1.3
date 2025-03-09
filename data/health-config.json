@@ -1,0 +1,28 @@
+{
+  "pressure_questions": [
+    {
+      "text": "最近一周感到焦虑的频率",
+      "options": [
+        {"score":0, "text":"几乎没有"},
+        {"score":1, "text":"偶尔"},
+        {"score":2, "text":"经常"}
+      ]
+    },
+    {
+      "text": "工作/学习效率如何",
+      "options": [
+        {"score":0, "text":"非常高效"},
+        {"score":1, "text":"正常水平"}, 
+        {"score":2, "text":"明显下降"}
+      ]
+    },
+    {
+      "text": "与亲友的交流频率",
+      "options": [
+        {"score":0, "text":"每天交流"},
+        {"score":1, "text":"每周几次"},
+        {"score":2, "text":"很少联系"}
+      ]
+    }
+  ]
+}
