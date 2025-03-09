@@ -1,5 +1,5 @@
 // public/scripts/modules/recipe.js
-import { fetchLocalData, createElement } from '../../utils.js';
+import { fetchLocalData, showLoading, createElement } from '../utils.js';
 
 const PAGE_SIZE = 6;
 
