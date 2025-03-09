@@ -10,9 +10,10 @@ export function createElement(tag, classes, attributes = {}) {
   }
   
   // 数据加载函数
+  
   export async function fetchLocalData(filePath) {
     try {
-      const response = await fetch(filePath);
+      const response = await fetch(`/${filePath}`);
       if (!response.ok) {
         throw new Error(`数据加载失败: ${response.status}`);
       }
