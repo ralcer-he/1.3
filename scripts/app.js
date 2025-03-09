@@ -3,10 +3,11 @@ import { showLoading, createElement } from './utils.js';
 
 let currentModule = null;
 
+const REPO_NAME = '/1.3'; // 根据你的仓库名调整
 const moduleMap = {
-  recipe: './modules/recipe.js',
-  health: './modules/health.js',
-  disease: './modules/disease.js'
+  recipe: `${REPO_NAME}/scripts/modules/recipe.js`,
+  health: `${REPO_NAME}/scripts/modules/health.js`,
+  disease: `${REPO_NAME}/scripts/modules/disease.js`
 };
 
 async function loadModule(moduleName) {
