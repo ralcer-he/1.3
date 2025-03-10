@@ -458,21 +458,21 @@ class HealthModule {
     let category, advice;
 
     if (bmi < 18.5 * ageFactor) {
-      category = 'underweight';
+      category = '过轻';
       advice = [
         "建议每日增加300-500大卡热量摄入",
         "优先选择高蛋白食物如鸡蛋、牛奶",
         "每周进行3次力量训练"
       ];
     } else if (bmi < 24 * ageFactor) {
-      category = 'healthy';
+      category = '健康';
       advice = [
         "保持均衡饮食结构",
         "每周至少150分钟中等强度运动",
         "定期监测体脂率"
       ];
     } else {
-      category = 'overweight';
+      category = '超重';
       advice = [
         "控制每日热量摄入",
         "增加膳食纤维摄入",
