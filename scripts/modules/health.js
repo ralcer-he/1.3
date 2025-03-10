@@ -28,7 +28,7 @@ class HealthModule {
 
   async init() {
     try {
-      this.config = await fetchLocalData('/1.3/data/health-config.json');
+      this.config = await fetchLocalData('/health-assistant/data/health-config.json');
       this.renderForm();
       this.loadSavedData();
       this.bindEvents();
@@ -291,7 +291,7 @@ class HealthModule {
     showLoading('resultSection');
     
     try {
-      const planData = await fetchLocalData('/1.3/data/daily-plans.json');
+      const planData = await fetchLocalData('/health-assistant/data/daily-plans.json');
       
       // 兼容中英文键名
       const rawPlans = planData.日常计划 || planData.dailyPlans;
@@ -353,7 +353,7 @@ class HealthModule {
 
   async checkDataStatus() {
     try {
-      const res = await fetch('/1.3/data/daily-plans.json');
+      const res = await fetch('/health-assistant/data/daily-plans.json');
       return {
         status: res.status,
         ok: res.ok,

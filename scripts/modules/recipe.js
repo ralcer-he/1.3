@@ -14,7 +14,7 @@ export default {
     
     try {
       this.renderLoading();
-      this.data = await fetchLocalData('/1.3/data/recipes.json');
+      this.data = await fetchLocalData('/health-assistant/data/recipes.json');
       this.renderScenarioSelection();
       this.bindGlobalEvents();
     } catch (error) {
